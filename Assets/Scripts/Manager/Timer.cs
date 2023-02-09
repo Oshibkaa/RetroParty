@@ -12,51 +12,40 @@ public class Timer : MonoBehaviour
     [Header("Oprions")]
 
     [SerializeField]
-    private float _timerUpdate;
+    private float _amountTime;
     [SerializeField]
-    private float _updateTime;
-    [SerializeField]
-    private Text _textTimer;
+    private Text _timerText;
 
+    private float _timer;
     private string _seconds;
     private string _minutes;
 
     private void Start()
     {
-        _timerUpdate = _updateTime;
-        StartCoroutine(StartTimer());
+        _timer = _amountTime;
+        StartCoroutine(CoroutineTimer());
     }
-
-    public void StartTimer(float seconds)
+    IEnumerator CoroutineTimer()
     {
-        _timerUpdate = seconds;
-        UpdateTimer();
-    }
-
-    private void UpdateTimer()
-    {
-        _seconds = (_timerUpdate % 60).ToString("00.00", System.Globalization.CultureInfo.GetCultureInfo("en-US"));
-        _minutes = ((int)_timerUpdate / 60).ToString("00");
-        _textTimer.text = _minutes + ":" + _seconds;
-
-        if (_timerUpdate <= 0)
+        while (_timer > 0f)
         {
-            _uiManager.Death();
-        }
-    }
-
-    public void UpdateTimeLvl()
-    {
-        _timerUpdate = _updateTime;
-    }
-
-    public IEnumerator StartTimer()
-    {
-        while (_timerUpdate > 0)
-        {
-            _timerUpdate -= Time.deltaTime;
+            _timer -= Time.deltaTime;
             UpdateTimer();
             yield return null;
         }
     }
+
+    private void UpdateTimer()
+    {
+        _seconds = (_timer % 60).ToString("00.00", System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+        _minutes = ((int)_timer / 60).ToString("00");
+        _timerText.text = _minutes + ":" + _seconds;
+
+        if (_timer <= 0f)
+        {
+            _uiManager.Death();
+            _timerText.text = "00" + ":" + "00.00";
+        }
+    }
+
 }

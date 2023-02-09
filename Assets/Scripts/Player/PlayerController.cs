@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IControlable
 {
     [Header("Scripts")]
 
@@ -34,34 +34,28 @@ public class PlayerController : MonoBehaviour
     private float _speed = 6f;
     [SerializeField]
     private float _shootDelay = 0.5f;
+
+    private Vector3 _direction;
     private float _lastDashTime;
     private float _dash = 500f;
-    private bool _isPlayerDeath = false;
-    private bool _isPlayerPause = false;
 
-    void Update()
+    private void FixedUpdate()
     {
-        if (_isPlayerDeath == false || _isPlayerPause == false)
-        {
-            MovementLogic();
-            RotationLogic();
-            ShootLogic();
-            DashController();
-            SkillController();
-        }
+        Move();
+        RotationLogic();
     }
 
-    public void MovementLogic()
+    public void MovementLogic(Vector3 direction)
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new(moveHorizontal, 0.0f, moveVertical);
-
-        transform.Translate(_speed * Time.fixedDeltaTime * movement);
+        _direction = direction;
     }
 
-    private void RotationLogic()
+    public void Move()
+    {
+        transform.Translate(6f * Time.fixedDeltaTime * _direction);
+    }
+
+    public void RotationLogic()
     {
         RaycastHit _hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -72,43 +66,38 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void SkillController()
+    public void ActiveShield()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            _skillPlayer.ActivateShield();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            _skillPlayer.ActivateUnlimited();
-        }
+        _skillPlayer.ActivateShield();
     }
 
-    private void DashController()
+    public void ActiveUnlimited()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (_lastDashTime + _shootDelay < Time.time)
-            {
-                if (Input.GetKey(KeyCode.W))
-                {
-                    StartCoroutine(Dash(new Vector3(0,0,1)));
-                }
-                else if (Input.GetKey(KeyCode.A))
-                {
-                    StartCoroutine(Dash(new Vector3(-1, 0, 0)));
-                }
-                else if(Input.GetKey(KeyCode.S))
-                {
-                    StartCoroutine(Dash(new Vector3(0, 0, -1)));
-                }
-                else if(Input.GetKey(KeyCode.D))
-                {
-                    StartCoroutine(Dash(new Vector3(1, 0, 0)));
-                }
+        _skillPlayer.ActivateUnlimited();
+    }
 
-                _lastDashTime = Time.time;
+    public void DashLogic()
+    {
+        if (_lastDashTime + _shootDelay < Time.time)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                StartCoroutine(Dash(new Vector3(0, 0, 1)));
             }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                StartCoroutine(Dash(new Vector3(-1, 0, 0)));
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                StartCoroutine(Dash(new Vector3(0, 0, -1)));
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                StartCoroutine(Dash(new Vector3(1, 0, 0)));
+            }
+
+            _lastDashTime = Time.time;
         }
     }
 
@@ -128,12 +117,9 @@ public class PlayerController : MonoBehaviour
         _rigidbody.isKinematic = false;
     }
 
-    private void ShootLogic()
+    public void ShootLogic()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            _gunPlayer.Shoot();
-        }
+        _gunPlayer.Shoot();
     }
 
     public void SlowingSpeed(float speedValue)
@@ -149,23 +135,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(5f);
         _freezeDebuff.SetActive(false);
         _dash = 500f;
-        _speed = 6f;
-    }
-
-    public void PlayerDeath(bool variants)
-    {
-        _isPlayerDeath = variants;
-    }
-
-    public void PlayerPause(bool variants)
-    {
-        _isPlayerPause = variants;
-        _speed = 0f;
-    }
-
-    public void PlayerResume()
-    {
-        _isPlayerPause = false;
         _speed = 6f;
     }
 }

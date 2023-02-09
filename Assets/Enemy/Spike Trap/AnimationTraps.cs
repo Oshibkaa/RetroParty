@@ -3,28 +3,23 @@ using UnityEngine;
 
 public class AnimationTraps : MonoBehaviour {
 
-    [SerializeField] Animator Trap; //Аниматор для ловушки;
-    public int senodsActivate = 2;
+    [SerializeField] 
+    Animator _spikeAnimator;
+    [SerializeField]
+    private float _makeTime = 2f;
 
     void Awake()
     {
-        //извлекаем компонент Аниматора из ловушки;
-        Trap = GetComponent<Animator>();
-        //начинаем открывать и закрывать ловушку;
+        _spikeAnimator = GetComponent<Animator>();
         StartCoroutine(OpenCloseTrap());
     }
 
     IEnumerator OpenCloseTrap()
     {
-        //воспроизведение открытия;
-        Trap.SetTrigger("open");
-        //ждём 2 секунды;
-        yield return new WaitForSeconds(senodsActivate);
-        //воспроизведение закрытия;
-        Trap.SetTrigger("close");
-        //ждём 2 секунды;
-        yield return new WaitForSeconds(senodsActivate);
-        //повторяем снова;
+        _spikeAnimator.SetTrigger("open");
+        yield return new WaitForSeconds(_makeTime);
+        _spikeAnimator.SetTrigger("close");
+        yield return new WaitForSeconds(_makeTime);
         StartCoroutine(OpenCloseTrap());
 
     }
