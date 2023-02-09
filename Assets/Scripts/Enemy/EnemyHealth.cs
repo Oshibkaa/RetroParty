@@ -52,29 +52,29 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage()
     {
-        _audioEnemy.TakeDamageAudioPlay();
-        StartCoroutine(Damage());
         _healthEnemy--;
 
-        if (_enemyID == "Boss")
-        {
-            Instantiate(_explosionParticle, _ParticlePoint.position, _explosionParticle.transform.rotation);
-            Instantiate(_explosionParticle, _ParticlePoint.position, _explosionParticle.transform.rotation);
-            Instantiate(_enemy, _enemyPosition[0].position, _enemy.transform.rotation);
-            Instantiate(_enemy, _enemyPosition[1].position, _enemy.transform.rotation);
-
-            _shield.SetActive(true);
-            _bossEnemy.layer = 12;
-
-            StartCoroutine(FiveSecTimer());
-
-        }
+        StartCoroutine(Damage());
+        _audioEnemy.TakeDamageAudioPlay();
 
         if (_healthEnemy <= 0)
         {
             _audioEnemy.DeathAudioPlay();
             _uiManager.UpdateScore(PointValue);
             Destroy(gameObject);
+        }
+
+        if (_enemyID == "Boss")
+        {
+            Instantiate(_explosionParticle, _ParticlePoint.position, _explosionParticle.transform.rotation);
+
+            Instantiate(_enemy, _enemyPosition[0].position, _enemy.transform.rotation);
+            Instantiate(_enemy, _enemyPosition[1].position, _enemy.transform.rotation);
+
+            _shield.SetActive(true);
+            _bossEnemy.layer = 12;
+
+            StartCoroutine(FiveSecondsTimer());
         }
         if (_enemyID == "Boss" && _healthEnemy <= 0)
         {
@@ -87,7 +87,7 @@ public class EnemyHealth : MonoBehaviour
         return _healthEnemy;
     }
 
-    IEnumerator FiveSecTimer()
+    IEnumerator FiveSecondsTimer()
     {
         yield return new WaitForSeconds(5f);
         _shield.SetActive(false);
@@ -98,14 +98,17 @@ public class EnemyHealth : MonoBehaviour
     {
         AI target = transform.gameObject.GetComponent<AI>();
         target.BooleanFindValue(false);
+
         _enemyMeshRenderer.material = _damageMaterial;
         _enemyRb.AddForce(-transform.forward * 200f, ForceMode.Force);
 
         yield return new WaitForSeconds(0.5f);
 
         _enemyMeshRenderer.material = _enemyMaterial;
+
         _enemyRb.isKinematic = true;
         _enemyRb.isKinematic = false;
+
         target.BooleanFindValue(true);
     }
 }

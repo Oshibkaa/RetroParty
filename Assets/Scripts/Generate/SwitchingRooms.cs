@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchingRooms : MonoBehaviour
 {
-    [Header("Link")]
+    [Header("Links")]
 
     private Transform _camera;
     private Transform _player;
@@ -27,19 +25,19 @@ public class SwitchingRooms : MonoBehaviour
         {
             switch (_gateDirection)
             {
-                case 0: //North
+                case 0: //Up
                     _camera.transform.position += new Vector3(0f, 0f, 13.3f);
                     _player.transform.position += new Vector3(0f, 0f, 3f);
                     break;
-                case 1: //East
+                case 1: //Right
                     _camera.transform.position += new Vector3(19.55f, 0f, 0f);
                     _player.transform.position += new Vector3(3f, 0f, 0f);
                     break;
-                case 2: //South
+                case 2: //Down
                     _camera.transform.position += new Vector3(0f, 0f, -13.3f);
                     _player.transform.position += new Vector3(0f, 0f, -3f);
                     break;
-                case 3: //West
+                case 3: //Left
                     _camera.transform.position += new Vector3(-19.55f, 0f, 0f);
                     _player.transform.position += new Vector3(-3f, 0f, 0f);
                     break;

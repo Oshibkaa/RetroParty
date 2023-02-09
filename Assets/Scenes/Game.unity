@@ -190,7 +190,6 @@ MonoBehaviour:
   - {fileID: 5708901207111000610, guid: ce284ca8e6071644c8a2768f724a5180, type: 3}
   - {fileID: 7504443589999587974, guid: 7cdd6f6c10d0fdc46860b560c53e9bee, type: 3}
   - {fileID: 4362275036533437797, guid: b734181718fed094b8c19bbd7180d604, type: 3}
-  Boss: {fileID: 3891033110084535702, guid: 441ac5accfe31c64c8672b5cc5b97fd4, type: 3}
   Rooms: []
 --- !u!1 &52897493
 GameObject:
@@ -202,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 52897494}
   m_Layer: 5
-  m_Name: CardMenu
+  m_Name: === CardMenu ===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 307822261}
   m_Layer: 5
-  m_Name: Death
+  m_Name: === DeathMenu ===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1133,7 +1132,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: YOU WIN, LOH
+  m_Text: Victory
 --- !u!222 &646568537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1520,7 +1519,7 @@ GameObject:
   - component: {fileID: 777319359}
   - component: {fileID: 777319360}
   m_Layer: 5
-  m_Name: GameUI
+  m_Name: === GameUI ===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1565,9 +1564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiManager: {fileID: 1215781961}
-  _timerUpdate: 150
-  _updateTime: 150
-  _textTimer: {fileID: 2109446139}
+  _amountTime: 250
+  _timerText: {fileID: 2109446139}
 --- !u!1 &849552633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,7 +1956,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 64, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -2163,7 +2161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 982595928}
   m_Layer: 5
-  m_Name: Winner
+  m_Name: === VictoryMenu ===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2684,7 +2682,7 @@ RectTransform:
   - {fileID: 307822261}
   - {fileID: 52897494}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2703,10 +2701,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a86b8569213fc4386cbf335c551fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1023421541}
-  _score: 0
-  DeathMenu: {fileID: 307822260}
-  Win: {fileID: 982595927}
+  _scoreText: {fileID: 1023421541}
+  _deathMenu: {fileID: 307822260}
+  _victoryMenu: {fileID: 982595927}
 --- !u!1 &1277705324
 GameObject:
   m_ObjectHideFlags: 0
@@ -3701,7 +3698,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1968769181
 GameObject:
@@ -4152,9 +4149,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ===== Player =====
       objectReference: {fileID: 0}
+    - target: {fileID: 9073728046023725489, guid: 6dcceaac3cc65284d9f040b3146cc20a, type: 3}
+      propertyPath: _dash
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 9073728046023725491, guid: 6dcceaac3cc65284d9f040b3146cc20a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9073728046023725491, guid: 6dcceaac3cc65284d9f040b3146cc20a, type: 3}
       propertyPath: m_LocalPosition.x

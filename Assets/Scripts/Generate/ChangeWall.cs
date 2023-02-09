@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangeWall : MonoBehaviour
 {
+    [Header("Objects")]
+
     [SerializeField]
     private GameObject _block;
     [SerializeField]
@@ -11,7 +11,7 @@ public class ChangeWall : MonoBehaviour
     [SerializeField]
     private Material _wallMaterial;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Wall"))
         {

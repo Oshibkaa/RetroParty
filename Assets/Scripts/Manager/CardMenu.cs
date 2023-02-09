@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CardMenu : MonoBehaviour
@@ -14,11 +12,7 @@ public class CardMenu : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Time.timeScale = 0;
-            _cardMenu.SetActive(true);
-        }
+
     }
 
     public void FirstCard()

@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameObjectManager : MonoBehaviour
 {
     public static GameObjectManager instance = null;
-    public List<GameObject> allObjects = new List<GameObject>();
+    public List<GameObject> allObjects = new();
 
     void Awake()
     {

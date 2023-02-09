@@ -34,10 +34,11 @@ public class PlayerController : MonoBehaviour, IControlable
     private float _speed = 6f;
     [SerializeField]
     private float _shootDelay = 0.5f;
+    [SerializeField]
+    private float _dash = 500f;
 
     private Vector3 _direction;
     private float _lastDashTime;
-    private float _dash = 500f;
 
     private void FixedUpdate()
     {
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour, IControlable
 
     public void Move()
     {
-        transform.Translate(6f * Time.fixedDeltaTime * _direction);
+        transform.Translate(_speed * Time.fixedDeltaTime * _direction);
     }
 
     public void RotationLogic()
@@ -105,13 +106,10 @@ public class PlayerController : MonoBehaviour, IControlable
     {
         _audioPlayer.DashAudioPlay();
 
-        _player.layer = 12;
-
         _rigidbody.AddForce(direction * _dash, ForceMode.Force);
         _dashParticle.Play();
         yield return new WaitForSeconds(0.2f);
         _dashParticle.Stop();
-        _player.layer = 8;
 
         _rigidbody.isKinematic = true;
         _rigidbody.isKinematic = false;
@@ -127,10 +125,10 @@ public class PlayerController : MonoBehaviour, IControlable
         _speed = speedValue;
         _dash = 250f;
         _freezeDebuff.SetActive(true);
-        StartCoroutine(FiveSecTimer());
+        StartCoroutine(FiveSecondsTimer());
     }
 
-    IEnumerator FiveSecTimer()
+    IEnumerator FiveSecondsTimer()
     {
         yield return new WaitForSeconds(5f);
         _freezeDebuff.SetActive(false);

@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -32,6 +31,7 @@ public class AI : MonoBehaviour
     private float _distance;
     private bool _alreadyAttacked;
     private bool _findTarget = true;
+    private bool _attack = false;
 
     private void Start()
     {
@@ -41,9 +41,17 @@ public class AI : MonoBehaviour
 
     private void Update()
     {
-        Ray PlayerCenterRay = new Ray(transform.position, transform.forward);
-        Ray PlayerLeftRay = new Ray(transform.position + transform.right * -0.2f, transform.forward);
-        Ray PlayerRightRay = new Ray(transform.position + transform.right * 0.2f, transform.forward);
+        if (_attack == true)
+        {
+            AttackPlayer();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        Ray PlayerCenterRay = new(transform.position, transform.forward);
+        Ray PlayerLeftRay = new(transform.position + transform.right * -0.2f, transform.forward);
+        Ray PlayerRightRay = new(transform.position + transform.right * 0.2f, transform.forward);
 
         _distance = Vector3.Distance(Target.position, transform.position);
 
@@ -60,11 +68,12 @@ public class AI : MonoBehaviour
                         && gameObject.activeSelf && gameObject != null)
                     {
                         Agent.SetDestination(transform.position);
-                        AttackPlayer();
+                        _attack = true;
                     }
                     else
                     {
                         Agent.SetDestination(Target.position);
+                        _attack = false;
                     }
                 }
             }

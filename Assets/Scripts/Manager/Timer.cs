@@ -25,6 +25,7 @@ public class Timer : MonoBehaviour
         _timer = _amountTime;
         StartCoroutine(CoroutineTimer());
     }
+
     IEnumerator CoroutineTimer()
     {
         while (_timer > 0f)
@@ -47,5 +48,4 @@ public class Timer : MonoBehaviour
             _timerText.text = "00" + ":" + "00.00";
         }
     }
-
 }

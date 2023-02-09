@@ -1,13 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnerRooms : MonoBehaviour
 {
-    [SerializeField]
-    private Direction _direction;
+    [Header("Links")]
+
+    private RoomsOptions _options;
+
+    [Header("Objects")]
+
     [SerializeField]
     private GameObject _bossPrefab;
+
+    [Header("Options")]
+
+    [SerializeField]
+    private Direction _direction;
+
+    private bool _isSpawned = false;
+    private int _randomValue;
+    private float _waitTime = 3f;
 
     public enum Direction
     {
@@ -18,16 +29,11 @@ public class SpawnerRooms : MonoBehaviour
         None
     }
 
-    private RoomsOptions _options;
-    private int _randomValue;
-    private bool _isSpawned = false;
-    private float _waitTime = 2f;
-
     private void Start()
     {
         _options = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomsOptions>();
         Destroy(gameObject, _waitTime);
-        Invoke(nameof(Spawn), 0.2f);
+        Invoke(nameof(Spawn), 0.3f);
     }
 
     public void Spawn()

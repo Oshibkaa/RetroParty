@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
     void DestroySelf()
     {
         Invoke(nameof(DestroySelf), 0.1f);
-        Instantiate(_colorParticle, transform.position, _colorParticle.transform.rotation);
+        LowParticle();
         Destroy(_trail);
     }
 
@@ -32,11 +32,11 @@ public class Bullet : MonoBehaviour
 
             if (target.CheckHealth() > 0)
             {
-                Instantiate(_colorParticle, transform.position, _colorParticle.transform.rotation);
+                LowParticle();
             }
             if (target.CheckHealth() <= 0)
             {
-                Instantiate(_explosionParticle, transform.position, _explosionParticle.transform.rotation);
+                HihgParticle();
             }
 
             DestroySelf();
@@ -54,11 +54,11 @@ public class Bullet : MonoBehaviour
 
             if (target._health > 0)
             {
-                Instantiate(_colorParticle, transform.position, _colorParticle.transform.rotation);
+                LowParticle();
             }
             if (target._health <= 0)
             {
-                Instantiate(_explosionParticle, transform.position, _explosionParticle.transform.rotation);
+                HihgParticle();
             }
 
             DestroySelf();
@@ -78,7 +78,17 @@ public class Bullet : MonoBehaviour
         else if (other.gameObject.CompareTag("Bullet"))
         {
             DestroySelf();
-            Instantiate(_explosionParticle, transform.position, _explosionParticle.transform.rotation);
+            HihgParticle();
         }
+    }
+
+    private void LowParticle()
+    {
+        Instantiate(_colorParticle, transform.position, _colorParticle.transform.rotation);
+    }
+
+    private void HihgParticle()
+    {
+        Instantiate(_explosionParticle, transform.position, _explosionParticle.transform.rotation);
     }
 }

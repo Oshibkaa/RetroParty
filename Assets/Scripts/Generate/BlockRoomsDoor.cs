@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockRoomsDoor : MonoBehaviour
@@ -40,11 +39,10 @@ public class BlockRoomsDoor : MonoBehaviour
 
     [Header("Options")]
 
+    private bool _isBossRoom = false;
     private int _enemyCount;
     private bool _spawned = false;
     private bool _enemysNull = false;
-    [SerializeField]
-    private bool _isBossRoom = false;
 
     private void Start()
     {

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -7,11 +6,8 @@ public class Health : MonoBehaviour
     [Header("Scripts")]
 
     [SerializeField]
-    private PlayerController _playerScript;
-    [SerializeField]
-    private UIManager _uiManager;
-    [SerializeField]
     private AudioManager _audioPlayer;
+    private UIManager _uiManager;
 
     [Header("HP")]
 
@@ -31,6 +27,7 @@ public class Health : MonoBehaviour
 
     void Start()
     {
+        _uiManager = GameObjectManager.instance.allObjects[1].GetComponent<UIManager>();
         _playerHPMaterial.material = _normalHp;
     }
 
@@ -48,8 +45,10 @@ public class Health : MonoBehaviour
         {
             _audioPlayer.DeathAudioPlay();
             _skinPlayer.SetActive(false);
+
             _playerGameObject.layer = 12;
             Time.timeScale = 0.3f;
+
             StartCoroutine(ActiveDeathUi());
         }
     }

@@ -6,8 +6,6 @@ public class PlayerGun : MonoBehaviour
     [Header("Script")]
 
     [SerializeField]
-    private PlayerController _playerScript;
-    [SerializeField]
     private AudioManager _audioPlayer;
 
     [Header("Links")]

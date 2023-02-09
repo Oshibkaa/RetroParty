@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("Link")]
-
     [Header("Shoot")]
 
     [SerializeField]

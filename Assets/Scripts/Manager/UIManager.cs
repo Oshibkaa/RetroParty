@@ -4,15 +4,21 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Text scoreText;
-    public int _score;
-    public GameObject DeathMenu;
-    public GameObject Win;
+    [Header("Objects")]
+
+    [SerializeField]
+    private Text _scoreText;
+    [SerializeField]
+    private GameObject _deathMenu;
+    [SerializeField]
+    private GameObject _victoryMenu;
+
+    private int _score;
 
     public void UpdateScore(int scoreAdd)
     {
         _score += scoreAdd;
-        scoreText.text = "Score: " + _score;
+        _scoreText.text = "Score: " + _score;
     }
 
     public void Resume()
@@ -23,13 +29,13 @@ public class UIManager : MonoBehaviour
     public void Death()
     {
         Time.timeScale = 0f;
-        DeathMenu.SetActive(true);
+        _deathMenu.SetActive(true);
     }
 
     public void Winner()
     {
         Time.timeScale = 0f;
-        Win.SetActive(true);
+        _victoryMenu.SetActive(true);
     }
 
     public void ReastartLevel()

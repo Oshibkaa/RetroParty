@@ -51,7 +51,7 @@ public class Power : MonoBehaviour
     IEnumerator ShieldCooldown()
     {
         yield return new WaitForSeconds(9f);
-        StartCoroutine(StartShieldBlinking(_shieldUp));
+        StartCoroutine(TimerSkill(_shieldUp));
         yield return new WaitForSeconds(1f);
 
         _shieldIconCoolDown.SetActive(false);
@@ -62,7 +62,7 @@ public class Power : MonoBehaviour
     IEnumerator UnlimitedCooldown()
     {
         yield return new WaitForSeconds(9f);
-        StartCoroutine(StartUnlimitedBlinking(_unlimitedUp));
+        StartCoroutine(TimerSkill(_unlimitedUp));
         yield return new WaitForSeconds(1f);
 
         _unlimitedIconCoolDown.SetActive(false);
@@ -70,7 +70,7 @@ public class Power : MonoBehaviour
         _playerGunScript._shootDelay = 0.5f;
     }
 
-    IEnumerator StartShieldBlinking(GameObject GameObject)
+    IEnumerator TimerSkill(GameObject GameObject)
     {
         GameObject.GetComponent<MeshRenderer>().enabled = false;
         yield return new WaitForSeconds(0.2f);
@@ -83,22 +83,6 @@ public class Power : MonoBehaviour
         GameObject.GetComponent<MeshRenderer>().enabled = false;
         yield return new WaitForSeconds(0.2f);
         GameObject.GetComponent<MeshRenderer>().enabled = true;
-        GameObject.SetActive(false);
-    }
-
-    IEnumerator StartUnlimitedBlinking(GameObject GameObject)
-    {
-        GameObject.SetActive(false);
-        yield return new WaitForSeconds(0.2f);
-        GameObject.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
-        GameObject.SetActive(false);
-        yield return new WaitForSeconds(0.2f);
-        GameObject.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
-        GameObject.SetActive(false);
-        yield return new WaitForSeconds(0.2f);
-        GameObject.SetActive(true);
         GameObject.SetActive(false);
     }
 }
