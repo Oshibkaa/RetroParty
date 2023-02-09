@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Wall
+  - Money
+  - Bullet
+  - HP
+  - Enemy
+  - BossEnemy
+  - Rooms
+  - SpawnPoint
+  - Gate
+  - FX
+  - Spike
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Bullet
+  - Water
+  - UI
+  - Wall
+  - Cloth
+  - Player
+  - Enemy
+  - Ground
+  - Bullet-AI
+  - Shield
+  - HP
+  - Gate
+  - Spike
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
