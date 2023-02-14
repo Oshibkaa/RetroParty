@@ -56,10 +56,7 @@ public class BlockRoomsDoor : MonoBehaviour
         {
             _spawned = true;
 
-            for (int i = 0; i < _blockGate.Length; i++)
-            {
-                _blockGate[i].SetActive(true);
-            }
+            StartCoroutine(CloseDoors());
 
             if (!_isBossRoom)
             {
@@ -120,6 +117,16 @@ public class BlockRoomsDoor : MonoBehaviour
         Instantiate(_bossPrefab, _spawnEnemyPoint[4].position, Quaternion.identity);
         Instantiate(_enemyPrefab[1], _spawnEnemyPoint[2].position, Quaternion.identity);
         Instantiate(_enemyPrefab[1], _spawnEnemyPoint[3].position, Quaternion.identity);
+    }
+
+    IEnumerator CloseDoors()
+    {
+        yield return new WaitForSeconds(1f);
+
+        for (int i = 0; i < _blockGate.Length; i++)
+        {
+            _blockGate[i].SetActive(true);
+        }
     }
 
     private void OpenDoors()

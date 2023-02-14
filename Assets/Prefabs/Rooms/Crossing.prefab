@@ -714,8 +714,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.758448, y: 1.4789969, z: 12.463185}
-  m_Center: {x: 0.010491371, y: 0.23949867, z: 1.6389966}
+  m_Size: {x: 17.523499, y: 1.4789969, z: 11.167899}
+  m_Center: {x: 0.03583193, y: 0.23949867, z: 1.6488204}
 --- !u!114 &6014152404933799203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,7 +758,6 @@ MonoBehaviour:
   - {fileID: 765052682755358133}
   - {fileID: 2046273123333078410}
   _hpPrefab: {fileID: 5780185251529811511, guid: 56beb9841453d3b4e8ddafc5d0732c92, type: 3}
-  _isBossRoom: 0
 --- !u!1 &4979777084420608384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1774,7 +1773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8752703066632028998, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8752703066632028999, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
       propertyPath: m_LocalPosition.x

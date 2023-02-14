@@ -7,6 +7,8 @@ public class Health : MonoBehaviour
 
     [SerializeField]
     private AudioManager _audioPlayer;
+    [SerializeField]
+    private InputController _inputPlayer;
     private UIManager _uiManager;
 
     [Header("HP")]
@@ -45,7 +47,7 @@ public class Health : MonoBehaviour
         {
             _audioPlayer.DeathAudioPlay();
             _skinPlayer.SetActive(false);
-
+            _inputPlayer.enabled = false;
             _playerGameObject.layer = 12;
             Time.timeScale = 0.3f;
 
