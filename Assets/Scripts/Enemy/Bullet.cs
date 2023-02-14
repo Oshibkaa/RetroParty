@@ -15,17 +15,18 @@ public class Bullet : MonoBehaviour
 
     [SerializeField]
     private string _bulletID;
+    private int _bounceValue = 3;
 
     void DestroySelf()
     {
-        Invoke(nameof(DestroySelf), 0.1f);
-        LowParticle();
+        Invoke(nameof(DestroySelf), 0f);
+        HihgParticle();
         Destroy(_trail);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        /*if (other.gameObject.CompareTag("Enemy"))
         {
             EnemyHealth target = other.transform.gameObject.GetComponent<EnemyHealth>();
             target.TakeDamage();
@@ -62,12 +63,18 @@ public class Bullet : MonoBehaviour
             }
 
             DestroySelf();
-        }
-        else if (other.gameObject.CompareTag("Wall"))
+        }*/
+        if (other.gameObject.CompareTag("Wall"))
         {
-            Invoke(nameof(DestroySelf), 0.1f);
+            _bounceValue--;
+            Debug.Log(_bounceValue);
+            if (_bounceValue <= 0)
+            {
+                Invoke(nameof(DestroySelf), 0f);
+                HihgParticle();
+            }
         }
-        else if (other.gameObject.CompareTag("Spike"))
+        /*else if (other.gameObject.CompareTag("Spike"))
         {
             Invoke(nameof(DestroySelf), 0.1f);
         }
@@ -78,8 +85,7 @@ public class Bullet : MonoBehaviour
         else if (other.gameObject.CompareTag("Bullet"))
         {
             DestroySelf();
-            HihgParticle();
-        }
+        }*/
     }
 
     private void LowParticle()

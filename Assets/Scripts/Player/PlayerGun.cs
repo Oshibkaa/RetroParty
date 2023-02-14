@@ -123,10 +123,5 @@ public class PlayerGun : MonoBehaviour
                 _audioPlayer.BounceBulletAudioPlay();
             }
         }
-
-        if (Trail != null)
-        {
-            Destroy(Trail.gameObject, Trail.time);
-        }
     }
 }

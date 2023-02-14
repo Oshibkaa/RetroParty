@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
     {
         while (_timer > 0f)
         {
-            _timer -= Time.deltaTime;
+            _timer += Time.deltaTime;
             UpdateTimer();
             yield return null;
         }
