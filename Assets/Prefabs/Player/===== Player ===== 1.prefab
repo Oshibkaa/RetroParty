@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30655170372170869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 1.5}
+  m_LocalPosition: {x: 0, y: -0.12, z: 1.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -83,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioPlayer: {fileID: 4741350394573236809}
   _mainCamera: {fileID: 0}
+  _bulletText: {fileID: 0}
   _reloadObject: {fileID: 9073728046422610619}
   _bulletSpawnPoint: {fileID: 30655170372170868}
   _bulletTrail: {fileID: 1559982705183733708, guid: c0dc1e455ceb51c46ba1cd2399f44ab4, type: 3}
@@ -93,7 +94,7 @@ MonoBehaviour:
   _speed: 50
   _shootDelay: 0.5
   _bouncingBullets: 1
-  _bounceDistance: 15
+  _bounceDistance: 100
 --- !u!1 &1409560840179108307
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +288,7 @@ Transform:
   m_GameObject: {fileID: 2496124323635523420}
   m_LocalRotation: {x: 0, y: -0.21415576, z: 0, w: 0.9767996}
   m_LocalPosition: {x: -0.232, y: 0.047999933, z: 0.44099987}
-  m_LocalScale: {x: 0.37329105, y: 0.121958874, z: -0.014575}
+  m_LocalScale: {x: 0.37329105, y: 0.23146574, z: -0.014575}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1456942079369298129}
@@ -1256,7 +1257,7 @@ Transform:
   m_GameObject: {fileID: 5000096601681886406}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: -1.7, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 27.599998}
+  m_LocalScale: {x: 60, y: 60, z: 27.599998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 30655170220772844}
@@ -1339,7 +1340,7 @@ Transform:
   m_GameObject: {fileID: 5449737024395544389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.05400008, z: 0}
-  m_LocalScale: {x: 0.8032551, y: 0.80766, z: 1}
+  m_LocalScale: {x: 0.8032551, y: 0.80766, z: 0.78824}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2543927702944143747}
@@ -1510,7 +1511,7 @@ Transform:
   m_GameObject: {fileID: 6923540860905859596}
   m_LocalRotation: {x: -0, y: 0.21415602, z: -0, w: 0.9767995}
   m_LocalPosition: {x: 0.232, y: 0.048, z: 0.441}
-  m_LocalScale: {x: 0.37329105, y: 0.121958874, z: -0.014575}
+  m_LocalScale: {x: 0.37329105, y: 0.20250052, z: -0.014575}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1456942079369298129}
@@ -6681,7 +6682,7 @@ Transform:
   m_GameObject: {fileID: 8991754516754028051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.92, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 0.77898, y: 1, z: 0.57817}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 30655170220772844}
@@ -6959,7 +6960,7 @@ MonoBehaviour:
   _freezeDebuff: {fileID: 3544684151588715795}
   _speed: 6
   _shootDelay: 0.5
-  _dash: 600
+  _dash: 500
 --- !u!114 &553573801377550779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6993,6 +6994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioPlayer: {fileID: 4741350394573236809}
+  _inputPlayer: {fileID: 9135287354468732275}
   _health: 2
   _normalHp: {fileID: 2100000, guid: d3c5c9db4b3b50743bfff760138eac2c, type: 2}
   _lowHp: {fileID: 2100000, guid: 7362a55a91259784880f4670040612ae, type: 2}
@@ -7151,7 +7153,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9073728046422610619}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 2.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7161,7 +7163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.0216, y: -0.01}
+  m_AnchoredPosition: {x: -0.0216, y: -0.48}
   m_SizeDelta: {x: 1.5774, y: 2.9943}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &9073728046422610623

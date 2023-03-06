@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 4362275036533437794}
   - component: {fileID: 8892026203993307799}
   - component: {fileID: 6688593106833273378}
+  - component: {fileID: 2845941135292795216}
   m_Layer: 14
   m_Name: UpLeft
   m_TagString: Rooms
@@ -630,8 +631,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.54809, y: 1.4789969, z: 11.295643}
-  m_Center: {x: 0.016409874, y: 0.23949867, z: 1.6050279}
+  m_Size: {x: 18.536396, y: 1.4789969, z: 12.327604}
+  m_Center: {x: -0.03870535, y: 0.23949867, z: 1.5646572}
 --- !u!114 &6688593106833273378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,6 +670,21 @@ MonoBehaviour:
   - {fileID: 2581750195390706139}
   - {fileID: 457187826374343787}
   _hpPrefab: {fileID: 5780185251529811511, guid: 56beb9841453d3b4e8ddafc5d0732c92, type: 3}
+--- !u!114 &2845941135292795216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362275036533437797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0494856644b99574883cb887f173ca19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerGate:
+  - {fileID: 3052928071235690864}
+  - {fileID: 1257526205753483894}
 --- !u!1 &4362275037416553203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,6 +2091,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8752703066632028998, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
   m_PrefabInstance: {fileID: 5992590121940729354}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3052928071235690864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8752703067387387770, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
+  m_PrefabInstance: {fileID: 5992590121940729354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &3052928071468124120 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8752703067157674450, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
@@ -2500,6 +2521,11 @@ GameObject:
 --- !u!23 &1257526205520872670 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8752703067157674450, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
+  m_PrefabInstance: {fileID: 7495248149556411660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1257526205753483894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8752703067387387770, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
   m_PrefabInstance: {fileID: 7495248149556411660}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5047161727310653993 stripped

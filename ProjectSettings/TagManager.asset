@@ -15,6 +15,7 @@ TagManager:
   - Gate
   - FX
   - Spike
+  - BossBullet
   layers:
   - Default
   - TransparentFX

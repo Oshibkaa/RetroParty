@@ -746,6 +746,7 @@ GameObject:
   - component: {fileID: 5708901207111000613}
   - component: {fileID: 1849124250455419261}
   - component: {fileID: -908872947985234556}
+  - component: {fileID: 1348893056537346512}
   m_Layer: 14
   m_Name: Left
   m_TagString: Rooms
@@ -787,8 +788,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.48683, y: 1.4789969, z: 11.302233}
-  m_Center: {x: 0.0038232803, y: 0.23949867, z: 1.6861019}
+  m_Size: {x: 18.536396, y: 1.4789969, z: 12.327604}
+  m_Center: {x: -0.03870535, y: 0.23949867, z: 1.5646572}
 --- !u!114 &-908872947985234556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,6 +825,20 @@ MonoBehaviour:
   - {fileID: 2432218050345870076}
   - {fileID: 4047107303839484633}
   _hpPrefab: {fileID: 5780185251529811511, guid: 56beb9841453d3b4e8ddafc5d0732c92, type: 3}
+--- !u!114 &1348893056537346512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708901207111000610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0494856644b99574883cb887f173ca19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerGate:
+  - {fileID: 7115788591869539633}
 --- !u!1 &5791890530320629184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1533,11 @@ GameObject:
 --- !u!23 &7115788591033635737 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8752703067157674450, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
+  m_PrefabInstance: {fileID: 1997211285392058955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7115788591869539633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8752703067387387770, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
   m_PrefabInstance: {fileID: 1997211285392058955}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2184304018043308072

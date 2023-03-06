@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerGun : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerGun : MonoBehaviour
 
     [SerializeField]
     private Animator _mainCamera;
+    [SerializeField]
+    private Text _bulletText;
 
     [Header("GunObjects")]
 
@@ -36,7 +39,6 @@ public class PlayerGun : MonoBehaviour
     private bool _bouncingBullets;
     [SerializeField]
     private float _bounceDistance = 10f;
-
     private float LastShootTime;
 
     public void Shoot()

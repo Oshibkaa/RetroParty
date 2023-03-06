@@ -11,10 +11,10 @@ public class InputController : MonoBehaviour
 
     private void Update()
     {
-        //ReadMove();
-        //ReadDash();
+        ReadMove();
+        ReadDash();
         ReadShoot();
-        //ReadSkill();
+        ReadSkill();
     }
 
     private void ReadMove()

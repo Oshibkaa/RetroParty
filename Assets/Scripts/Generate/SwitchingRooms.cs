@@ -16,7 +16,6 @@ public class SwitchingRooms : MonoBehaviour
     {
         _camera = GameObjectManager.instance.allObjects[2].transform;
         _player = GameObjectManager.instance.allObjects[0].transform;
-        _camera.transform.position = new Vector3(0f, 7.35f, -1.75f);
     }
 
     private void OnTriggerEnter(Collider other)
