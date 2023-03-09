@@ -6,11 +6,6 @@ public class SpawnerRooms : MonoBehaviour
 
     private RoomsOptions _options;
 
-    [Header("Objects")]
-
-    [SerializeField]
-    private GameObject _bossPrefab;
-
     [Header("Options")]
 
     [SerializeField]
@@ -18,15 +13,14 @@ public class SpawnerRooms : MonoBehaviour
 
     private bool _isSpawned = false;
     private int _randomValue;
-    private float _waitTime = 3f;
+    private float _waitTime = 0.5f;
 
     public enum Direction
     {
         Up,
         Down,
         Left,
-        Right,
-        None
+        Right
     }
 
     private void Start()
@@ -34,6 +28,18 @@ public class SpawnerRooms : MonoBehaviour
         _options = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomsOptions>();
         Destroy(gameObject, _waitTime);
         Invoke(nameof(Spawn), 0.3f);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        //if (other.CompareTag("SpawnPoint") && other.GetComponent<SpawnerRooms>()._isSpawned)
+        //{
+        //    Destroy(gameObject);
+        //}
+        if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Spawn()
@@ -62,13 +68,5 @@ public class SpawnerRooms : MonoBehaviour
             }
         }
         _isSpawned = true;
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("SpawnPoint") && other.GetComponent<SpawnerRooms>()._isSpawned)
-        {
-            Destroy(gameObject);
-        }
     }
 }

@@ -39,8 +39,8 @@ public class BlockRoomsDoor : MonoBehaviour
 
     [Header("Options")]
 
-    private bool _isBossRoom = false;
     private int _enemyCount;
+    private bool _isBossRoom = false;
     private bool _spawned = false;
     private bool _enemysNull = false;
 
@@ -121,7 +121,7 @@ public class BlockRoomsDoor : MonoBehaviour
 
     IEnumerator CloseDoors()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
 
         for (int i = 0; i < _blockGate.Length; i++)
         {

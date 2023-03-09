@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ChangeWall : MonoBehaviour
@@ -11,12 +12,18 @@ public class ChangeWall : MonoBehaviour
     [SerializeField]
     private Material _wallMaterial;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Wall"))
         {
-            _block.SetActive(true);
-            _gateMaterial.material = _wallMaterial;
+            //StartCoroutine(OneSecondsTimer());
         }
+    }
+
+    IEnumerator OneSecondsTimer()
+    {
+        yield return new WaitForSeconds(3f);
+        _block.SetActive(true);
+        _gateMaterial.material = _wallMaterial;
     }
 }

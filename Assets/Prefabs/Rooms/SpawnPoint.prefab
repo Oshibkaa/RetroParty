@@ -76,4 +76,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: 0
-  _bossPrefab: {fileID: 3891033110084535702, guid: 441ac5accfe31c64c8672b5cc5b97fd4, type: 3}

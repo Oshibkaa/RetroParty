@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -30,13 +31,14 @@ public class AI : MonoBehaviour
 
     private float _distance;
     private bool _alreadyAttacked;
-    private bool _findTarget = true;
+    private bool _findTarget = false;
     private bool _attack = false;
 
     private void Start()
     {
         Target = GameObjectManager.instance.allObjects[0].transform;
         Agent = GetComponent<NavMeshAgent>();
+        StartCoroutine(StartFindPlayerTimer());
     }
 
     private void Update()
@@ -103,6 +105,12 @@ public class AI : MonoBehaviour
     public void BooleanFindValue(bool variants)
     {
         _findTarget = variants;
+    }
+
+    IEnumerator StartFindPlayerTimer()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _findTarget = true;
     }
 
     private void OnDrawGizmosSelected()

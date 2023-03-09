@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7469562990282298731}
   - component: {fileID: 2850921459378887411}
   - component: {fileID: 7310997945892978719}
+  - component: {fileID: 2250407104128014080}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -114,6 +115,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &2250407104128014080
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751542806999464769}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1155471659589182167
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +314,7 @@ GameObject:
   - component: {fileID: 9084445679119905489}
   - component: {fileID: 5640276321995924179}
   - component: {fileID: 1762349567089069687}
+  - component: {fileID: 4508436781773243235}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -398,6 +416,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &4508436781773243235
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3940521125097718751}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3986040699406255397
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +510,7 @@ GameObject:
   - component: {fileID: 4362275036430922891}
   - component: {fileID: 4362275036430922890}
   - component: {fileID: 5821277483511022454}
+  - component: {fileID: 4321540922500096326}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -577,6 +612,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &4321540922500096326
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362275036430922892}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4362275036533437797
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +749,7 @@ GameObject:
   - component: {fileID: 4362275037416553214}
   - component: {fileID: 4362275037416553201}
   - component: {fileID: 9179082895832124378}
+  - component: {fileID: 4859938278334339903}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -799,6 +851,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &4859938278334339903
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362275037416553203}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4370009313035364578
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +988,7 @@ GameObject:
   - component: {fileID: 9038457586241956526}
   - component: {fileID: 7679372335820709883}
   - component: {fileID: 6514019554191023112}
+  - component: {fileID: 3606557949676969157}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -1021,6 +1090,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &3606557949676969157
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108397411700342431}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7558793757798218968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1119,7 @@ GameObject:
   - component: {fileID: 6396536637919560904}
   - component: {fileID: 6517933660412774684}
   - component: {fileID: 6019938925103319994}
+  - component: {fileID: 319433150322225051}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -1135,6 +1221,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &319433150322225051
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558793757798218968}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8181067358766906649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,6 +1787,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1392295793364284927, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392295793364284927, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: _direction
       value: 4
       objectReference: {fileID: 0}
@@ -1695,6 +1801,10 @@ PrefabInstance:
     - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: m_Name
       value: SpawnPointNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}

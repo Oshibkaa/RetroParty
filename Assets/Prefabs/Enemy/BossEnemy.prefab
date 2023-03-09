@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 3547225563361255603}
   - component: {fileID: 539006977295018106}
   - component: {fileID: 794279006891316974}
-  m_Layer: 9
+  m_Layer: 16
   m_Name: BossEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!195 &3547225563361255603
 NavMeshAgent:
@@ -293,7 +293,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3891033110084535702}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.1
   m_Speed: 0
   m_Acceleration: 10
   avoidancePriority: 50
@@ -348,7 +348,7 @@ MonoBehaviour:
   _ParticlePoint: {fileID: 4036035722979385301}
   _explosionParticle: {fileID: 2485464093149708769, guid: d2c04e45838e3a94cb99d1a55909316c, type: 3}
   _winUiMenu: {fileID: 0}
-  _healthEnemy: 10
+  _healthEnemy: 5
   PointValue: 1500
   _enemyRb: {fileID: 1588558542422849907}
   _enemyPosition:
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 8671036929176289391}
   - component: {fileID: 5028394813985182172}
   - component: {fileID: 4841837610608480790}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}

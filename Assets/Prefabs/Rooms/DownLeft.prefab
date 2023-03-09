@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 6724880548101930178}
   - component: {fileID: 6724880548101930181}
   - component: {fileID: 6252353594614767470}
+  - component: {fileID: 4692416729935592559}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -297,6 +298,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &4692416729935592559
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6724880548101930182}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6724880548680807468
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +327,7 @@ GameObject:
   - component: {fileID: 6724880548680807464}
   - component: {fileID: 6724880548680807467}
   - component: {fileID: 4880379520331031099}
+  - component: {fileID: 4913099838394873788}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -411,6 +429,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &4913099838394873788
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6724880548680807468}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6724880548707262061
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +458,7 @@ GameObject:
   - component: {fileID: 6724880548707262057}
   - component: {fileID: 6724880548707262056}
   - component: {fileID: 3475718286447282618}
+  - component: {fileID: 4236194515188524515}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -525,6 +560,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &4236194515188524515
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6724880548707262061}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6724880548757327917
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +589,7 @@ GameObject:
   - component: {fileID: 6724880548757327913}
   - component: {fileID: 6724880548757327912}
   - component: {fileID: 2337014162850654353}
+  - component: {fileID: 1787080045145276178}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -639,6 +691,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &1787080045145276178
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6724880548757327917}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6724880548824222402
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +720,7 @@ GameObject:
   - component: {fileID: 6724880548824222430}
   - component: {fileID: 6724880548824222401}
   - component: {fileID: 7421035405079320154}
+  - component: {fileID: 6221670580791511124}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -753,6 +822,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &6221670580791511124
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6724880548824222402}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6724880548890266267
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +851,7 @@ GameObject:
   - component: {fileID: 6724880548890266263}
   - component: {fileID: 6724880548890266262}
   - component: {fileID: 3150542045262892298}
+  - component: {fileID: 5360234135697796346}
   m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
@@ -867,6 +953,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0
+--- !u!54 &5360234135697796346
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6724880548890266267}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6724880549276563334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,6 +1923,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1392295793364284927, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392295793364284927, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: _direction
       value: 4
       objectReference: {fileID: 0}
@@ -1831,6 +1937,10 @@ PrefabInstance:
     - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: m_Name
       value: SpawnPointNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
@@ -2143,7 +2253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 332900126413796598, guid: ce54c562acac7364c8fff6731d8ebe64, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 332900126413796598, guid: ce54c562acac7364c8fff6731d8ebe64, type: 3}
       propertyPath: m_LocalRotation.w

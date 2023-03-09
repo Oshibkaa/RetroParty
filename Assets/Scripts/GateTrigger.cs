@@ -26,7 +26,7 @@ public class GateTrigger : MonoBehaviour
 
     IEnumerator ActivetedTrigger()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         for (int i = 0; i < _triggerGate.Length; i++)
         {
@@ -36,7 +36,7 @@ public class GateTrigger : MonoBehaviour
 
     IEnumerator DisabledTrigger()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         for (int i = 0; i < _triggerGate.Length; i++)
         {
