@@ -4,28 +4,17 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [Header("Scripts")]
-
-    [SerializeField]
-    private AudioManager _audioPlayer;
-    [SerializeField]
-    private InputController _inputPlayer;
+    [SerializeField] private AudioManager _audioPlayer;
+    [SerializeField] private InputController _inputPlayer;
     private UIManager _uiManager;
 
     [Header("HP")]
-
-    public int _health;
-
-    [SerializeField]
-    private Material _normalHp, _lowHp;
-    [SerializeField]
-    private MeshRenderer _playerHPMaterial;
+    [SerializeField] private int _health;
+    [SerializeField] private Material _normalHp, _lowHp;
+    [SerializeField] private MeshRenderer _playerHPMaterial;
 
     [Header("Player")]
-
-    [SerializeField]
-    private GameObject _playerGameObject;
-    [SerializeField]
-    private GameObject _skinPlayer;
+    [SerializeField] private GameObject _playerGameObject, _skinPlayer;
 
     void Start()
     {
@@ -72,5 +61,11 @@ public class Health : MonoBehaviour
     {
         _health++;
         CheckHPValue();
+    }
+
+    public int HealthCheck
+    {
+        get { return _health; }
+        protected set { _health = value; }
     }
 }

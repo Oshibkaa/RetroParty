@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class CardMenu : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerController _playerScripts;
-    [SerializeField]
-    private GameObject _cardMenu;
+    [SerializeField] private PlayerController _playerScripts;
+    [SerializeField] private GameObject _cardMenu;
 
     [SerializeField]
     private string _cardID;

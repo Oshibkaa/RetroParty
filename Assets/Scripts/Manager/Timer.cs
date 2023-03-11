@@ -5,20 +5,13 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     [Header("Scripts")]
-
-    [SerializeField]
-    private UIManager _uiManager;
+    [SerializeField] private UIManager _uiManager;
 
     [Header("Oprions")]
-
-    [SerializeField]
-    private float _amountTime;
-    [SerializeField]
-    private Text _timerText;
-
+    [SerializeField] private float _amountTime;
+    [SerializeField] private Text _timerText;
     private float _timer;
-    private string _seconds;
-    private string _minutes;
+    private string _seconds, _minutes;
 
     private void Start()
     {

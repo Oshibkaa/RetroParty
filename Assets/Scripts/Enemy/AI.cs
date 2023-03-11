@@ -5,45 +5,34 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
     [Header("Scripts")]
-
-    [SerializeField]
-    private AudioManager _audioEnemy;
+    [SerializeField] private AudioManager _audioEnemy;
 
     [Header("Link")]
-
-    [SerializeField]
-    private GameObject AIBullet;
-    [SerializeField]
-    private Transform FirePoint;
-    [SerializeField]
-    private Transform Target;
-    [SerializeField]
-    private NavMeshAgent Agent;
+    [SerializeField] private GameObject _aiBullet;
+    [SerializeField] private Transform _firePoint;
+    [SerializeField] private Transform _target;
+    [SerializeField] private NavMeshAgent _agent;
 
     [Header("Options")]
-
-    [SerializeField]
-    private float _lookRadius = 20f;
-    [SerializeField]
-    private float AttackRadius;
-    [SerializeField]
-    private float AttackReset;
+    [SerializeField] private float _lookRadius = 20f;
+    [SerializeField] private float _attackRadius;
+    [SerializeField] private float _attackReset;
 
     private float _distance;
     private bool _alreadyAttacked;
-    private bool _findTarget = false;
-    private bool _attack = false;
+    private bool _findTarget;
+    private bool _isAttacking;
 
     private void Start()
     {
-        Target = GameObjectManager.instance.allObjects[0].transform;
-        Agent = GetComponent<NavMeshAgent>();
+        _target = GameObjectManager.instance.allObjects[0].transform;
+        _agent = GetComponent<NavMeshAgent>();
         StartCoroutine(StartFindPlayerTimer());
     }
 
     private void Update()
     {
-        if (_attack == true)
+        if (_isAttacking)
         {
             AttackPlayer();
         }
@@ -51,31 +40,32 @@ public class AI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Ray PlayerCenterRay = new(transform.position, transform.forward);
-        Ray PlayerLeftRay = new(transform.position + transform.right * -0.2f, transform.forward);
-        Ray PlayerRightRay = new(transform.position + transform.right * 0.2f, transform.forward);
+        Ray playerCenterRay = new Ray(transform.position, transform.forward);
+        Ray playerLeftRay = new Ray(transform.position + transform.right * -0.2f, transform.forward);
+        Ray playerRightRay = new Ray(transform.position + transform.right * 0.2f, transform.forward);
 
-        _distance = Vector3.Distance(Target.position, transform.position);
+        _distance = Vector3.Distance(_target.position, transform.position);
 
-        if (_findTarget == true)
+        if (_findTarget)
         {
             if (_distance < _lookRadius && gameObject.activeSelf)
             {
-                transform.LookAt(Target);
+                transform.LookAt(_target);
 
-                if (Physics.Raycast(PlayerCenterRay, out RaycastHit hit, AttackRadius) && Physics.Raycast(PlayerLeftRay, out RaycastHit hitLeft, AttackRadius)
-                && Physics.Raycast(PlayerRightRay, out RaycastHit hitRight, AttackRadius))
+                if (Physics.Raycast(playerCenterRay, out RaycastHit hit, _attackRadius) &&
+                    Physics.Raycast(playerLeftRay, out RaycastHit hitLeft, _attackRadius) &&
+                    Physics.Raycast(playerRightRay, out RaycastHit hitRight, _attackRadius))
                 {
-                    if (hit.transform.CompareTag("Player") && hitLeft.transform.CompareTag("Player") && hitRight.transform.CompareTag("Player")
-                        && gameObject.activeSelf && gameObject != null)
+                    if (hit.transform.CompareTag("Player") && hitLeft.transform.CompareTag("Player") &&
+                        hitRight.transform.CompareTag("Player") && gameObject.activeSelf && gameObject != null)
                     {
-                        Agent.SetDestination(transform.position);
-                        _attack = true;
+                        _agent.SetDestination(transform.position);
+                        _isAttacking = true;
                     }
                     else
                     {
-                        Agent.SetDestination(Target.position);
-                        _attack = false;
+                        _agent.SetDestination(_target.position);
+                        _isAttacking = false;
                     }
                 }
             }
@@ -88,12 +78,12 @@ public class AI : MonoBehaviour
         {
             _audioEnemy.ShootAudioPlay();
 
-            GameObject bullet = Instantiate(AIBullet, FirePoint.position, FirePoint.rotation);
+            GameObject bullet = Instantiate(_aiBullet, _firePoint.position, _firePoint.rotation);
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 500f, ForceMode.Force);
 
-            Agent.SetDestination(transform.position);
+            _agent.SetDestination(transform.position);
             _alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), AttackReset);
+            Invoke(nameof(ResetAttack), _attackReset);
         }
     }
 
@@ -102,12 +92,12 @@ public class AI : MonoBehaviour
         _alreadyAttacked = false;
     }
 
-    public void BooleanFindValue(bool variants)
+    public void SetFindTarget(bool value)
     {
-        _findTarget = variants;
+        _findTarget = value;
     }
 
-    IEnumerator StartFindPlayerTimer()
+    private IEnumerator StartFindPlayerTimer()
     {
         yield return new WaitForSeconds(0.2f);
         _findTarget = true;

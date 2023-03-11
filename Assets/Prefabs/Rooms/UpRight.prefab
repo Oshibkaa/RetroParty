@@ -325,7 +325,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008272870854575305}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfe84810a66bb4449932b7332ae87a9c, type: 3}
   m_Name: 
@@ -346,7 +346,7 @@ MonoBehaviour:
   _enemyPrefab:
   - {fileID: 3414339984034591129, guid: 1bcc4edca0efb84488d1a268315d48ae, type: 3}
   - {fileID: 8325549663069237578, guid: 2927a140c06082b4cbe088394cec1f16, type: 3}
-  _bossPrefab: {fileID: 3891033110084535702, guid: 441ac5accfe31c64c8672b5cc5b97fd4, type: 3}
+  _bossPrefab: {fileID: 7820022086258876460, guid: 441ac5accfe31c64c8672b5cc5b97fd4, type: 3}
   _waveValue: 2
   _spawnEnemyPoint:
   - {fileID: 1662294112375553798}
@@ -2269,7 +2269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: m_TagString
@@ -3092,7 +3092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
@@ -3228,7 +3228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}

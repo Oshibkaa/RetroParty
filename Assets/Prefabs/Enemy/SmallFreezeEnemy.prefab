@@ -669,14 +669,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioEnemy: {fileID: 3731706796583164977}
-  AIBullet: {fileID: 6920787993049495278, guid: 1efcc33d8bcfee542b003c86dc37fb49, type: 3}
-  FirePoint: {fileID: 8325549662643785706}
-  Target: {fileID: 0}
-  Agent: {fileID: 8325549663069237589}
+  _aiBullet: {fileID: 6920787993049495278, guid: 1efcc33d8bcfee542b003c86dc37fb49, type: 3}
+  _firePoint: {fileID: 8325549662643785706}
+  _target: {fileID: 0}
+  _agent: {fileID: 8325549663069237589}
   _lookRadius: 20
-  _bulletForce: 500
-  AttackRadius: 15
-  AttackReset: 1
+  _attackRadius: 10
+  _attackReset: 1
 --- !u!114 &8382591001734184280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,10 +693,15 @@ MonoBehaviour:
   _enemyMaterial: {fileID: 2100000, guid: 196696431e92fd64aa268806605415da, type: 2}
   _damageMaterial: {fileID: 2100000, guid: 7362a55a91259784880f4670040612ae, type: 2}
   _bossEnemy: {fileID: 0}
+  _enemy: {fileID: 0}
   _shield: {fileID: 0}
+  _ParticlePoint: {fileID: 0}
+  _explosionParticle: {fileID: 0}
+  _winUiMenu: {fileID: 0}
   _healthEnemy: 2
   PointValue: 250
   _enemyRb: {fileID: 8325549663069237591}
+  _enemyPosition: []
   _enemyID: Freeze
 --- !u!1 &8325549663244783668
 GameObject:

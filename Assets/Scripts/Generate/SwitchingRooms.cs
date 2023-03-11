@@ -3,14 +3,10 @@ using UnityEngine;
 public class SwitchingRooms : MonoBehaviour
 {
     [Header("Links")]
-
-    private Transform _camera;
-    private Transform _player;
+    private Transform _camera, _player;
 
     [Header("Options")]
-
-    [SerializeField]
-    private int _gateDirection;
+    [SerializeField] private int _gateDirection;
 
     void Start()
     {

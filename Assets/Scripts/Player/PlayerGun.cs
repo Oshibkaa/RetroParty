@@ -5,40 +5,24 @@ using UnityEngine.UI;
 public class PlayerGun : MonoBehaviour
 {
     [Header("Script")]
-
-    [SerializeField]
-    private AudioManager _audioPlayer;
+    [SerializeField] private AudioManager _audioPlayer;
 
     [Header("Links")]
-
-    [SerializeField]
-    private Animator _mainCamera;
-    [SerializeField]
-    private Text _bulletText;
+    [SerializeField] private Animator _mainCamera;
+    [SerializeField] private Text _bulletText;
 
     [Header("GunObjects")]
-
-    [SerializeField]
-    private GameObject _reloadObject;
-    [SerializeField]
-    private Transform _bulletSpawnPoint;
-    [SerializeField]
-    private TrailRenderer _bulletTrail;
-    [SerializeField]
-    private LayerMask _mask;
-    [SerializeField]
-    private ParticleSystem _shootParticle;
+    [SerializeField] private GameObject _reloadObject;
+    [SerializeField] private Transform _bulletSpawnPoint;
+    [SerializeField] private TrailRenderer _bulletTrail;
+    [SerializeField] private LayerMask _mask;
+    [SerializeField] private ParticleSystem _shootParticle;
 
     [Header("GunOptions")]
-
-    [SerializeField]
-    private float _speed = 100;
-    [SerializeField]
-    public float _shootDelay = 1.5f;
-    [SerializeField]
-    private bool _bouncingBullets;
-    [SerializeField]
-    private float _bounceDistance = 10f;
+    [SerializeField] private float _speed = 100;
+    [SerializeField] private float _shootDelay = 1.5f;
+    [SerializeField] private bool _bouncingBullets;
+    [SerializeField] private float _bounceDistance = 10f;
     private float LastShootTime;
 
     public void Shoot()
@@ -125,5 +109,10 @@ public class PlayerGun : MonoBehaviour
                 _audioPlayer.BounceBulletAudioPlay();
             }
         }
+    }
+
+    public void ChangeShootDelay(float value)
+    {
+        _shootDelay = value;
     }
 }

@@ -3,17 +3,13 @@ using UnityEngine;
 public class SpawnerRooms : MonoBehaviour
 {
     [Header("Links")]
-
     private RoomsOptions _options;
 
     [Header("Options")]
-
-    [SerializeField]
-    private Direction _direction;
-
+    [SerializeField] private Direction _direction;
     private bool _isSpawned = false;
     private int _randomValue;
-    private float _waitTime = 0.5f;
+    private float _waitTime = 2f;
 
     public enum Direction
     {
@@ -27,15 +23,11 @@ public class SpawnerRooms : MonoBehaviour
     {
         _options = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomsOptions>();
         Destroy(gameObject, _waitTime);
-        Invoke(nameof(Spawn), 0.3f);
+        Invoke(nameof(Spawn),Random.Range(0.5f, 1.5f));
     }
 
     private void OnTriggerStay(Collider other)
     {
-        //if (other.CompareTag("SpawnPoint") && other.GetComponent<SpawnerRooms>()._isSpawned)
-        //{
-        //    Destroy(gameObject);
-        //}
         if (other.CompareTag("Wall"))
         {
             Destroy(gameObject);

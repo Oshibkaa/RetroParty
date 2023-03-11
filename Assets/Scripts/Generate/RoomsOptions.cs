@@ -5,7 +5,6 @@ using UnityEngine;
 public class RoomsOptions : MonoBehaviour
 {
     [Header("Objects")]
-
     public GameObject[] UpRooms, RightRooms, DownRooms, LeftRooms;
     public List<GameObject> Rooms;
 

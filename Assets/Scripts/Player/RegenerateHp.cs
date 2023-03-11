@@ -3,13 +3,10 @@ using UnityEngine;
 public class RegenerateHp : MonoBehaviour
 {
     [Header("Scripts")]
-
     private Health _playerHpScript;
 
     [Header("Particle")]
-
-    [SerializeField]
-    private ParticleSystem _explosionPrefab;
+    [SerializeField] private ParticleSystem _explosionPrefab;
 
     private void Start()
     {

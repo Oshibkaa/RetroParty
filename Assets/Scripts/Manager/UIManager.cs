@@ -5,13 +5,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [Header("Objects")]
-
-    [SerializeField]
-    private Text _scoreText;
-    [SerializeField]
-    private GameObject _deathMenu;
-    [SerializeField]
-    private GameObject _victoryMenu;
+    [SerializeField] private Text _scoreText;
+    [SerializeField] private GameObject _deathMenu, _victoryMenu;
 
     private int _score;
 

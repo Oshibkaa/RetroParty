@@ -3,18 +3,12 @@
 public class Bullet : MonoBehaviour
 {
     [Header("Object")]
-
-    [SerializeField]
-    private Rigidbody _rigidBody;
-    [SerializeField]
-    private GameObject _trail;
-    [SerializeField]
-    private ParticleSystem _explosionParticle, _colorParticle;
+    [SerializeField] private Rigidbody _rigidBody;
+    [SerializeField] private GameObject _trail;
+    [SerializeField] private ParticleSystem _explosionParticle, _colorParticle;
 
     [Header("Options")]
-
-    [SerializeField]
-    private string _bulletID;
+    [SerializeField] private string _bulletID;
 
     void DestroySelf()
     {
@@ -52,11 +46,11 @@ public class Bullet : MonoBehaviour
                 player.SlowingSpeed(2f);
             }
 
-            if (target._health > 0)
+            if (target.HealthCheck > 0)
             {
                 LowParticle();
             }
-            if (target._health <= 0)
+            if (target.HealthCheck <= 0)
             {
                 HighParticle();
             }

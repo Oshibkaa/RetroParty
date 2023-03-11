@@ -4,27 +4,13 @@ using UnityEngine;
 public class Power : MonoBehaviour
 {
     [Header("Script")]
-
-    [SerializeField]
-    private PlayerGun _playerGunScript;
+    [SerializeField] private PlayerGun _playerGunScript;
 
     [Header("GameObject")]
-    [SerializeField]
-    private GameObject _shieldUp;
-    [SerializeField]
-    private GameObject _unlimitedUp;
-    [SerializeField]
-    private GameObject _playerGameObject;
+    [SerializeField] private GameObject _shieldUp, _unlimitedUp, _playerGameObject;
 
     [Header("UI")]
-    [SerializeField]
-    private GameObject _unlimitedIcon;
-    [SerializeField]
-    private GameObject _unlimitedIconCoolDown;
-    [SerializeField]
-    private GameObject _shieldIcon;
-    [SerializeField]
-    private GameObject _shieldIconCoolDown;
+    [SerializeField] private GameObject _unlimitedIcon, _unlimitedIconCoolDown, _shieldIconCoolDown, _shieldIcon;
 
     public void ActivateUnlimited()
     {
@@ -32,7 +18,7 @@ public class Power : MonoBehaviour
         _unlimitedIcon.SetActive(false);
         _unlimitedUp.SetActive(true);
 
-        _playerGunScript._shootDelay = 0f;
+        _playerGunScript.ChangeShootDelay(0);
 
         StartCoroutine(UnlimitedCooldown());
     }
@@ -67,7 +53,7 @@ public class Power : MonoBehaviour
 
         _unlimitedIconCoolDown.SetActive(false);
         _unlimitedIcon.SetActive(true);
-        _playerGunScript._shootDelay = 0.5f;
+        _playerGunScript.ChangeShootDelay(0.5f);
     }
 
     IEnumerator TimerSkill(GameObject GameObject)

@@ -750,7 +750,7 @@ MonoBehaviour:
   - {fileID: 3414339984034591129, guid: 1bcc4edca0efb84488d1a268315d48ae, type: 3}
   - {fileID: 8325549663069237578, guid: 2927a140c06082b4cbe088394cec1f16, type: 3}
   - {fileID: 3414339984034591129, guid: 1bcc4edca0efb84488d1a268315d48ae, type: 3}
-  _bossPrefab: {fileID: 3891033110084535702, guid: 441ac5accfe31c64c8672b5cc5b97fd4, type: 3}
+  _bossPrefab: {fileID: 7820022086258876460, guid: 441ac5accfe31c64c8672b5cc5b97fd4, type: 3}
   _waveValue: 4
   _spawnEnemyPoint:
   - {fileID: 1335733134191846720}
@@ -3907,7 +3907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: m_TagString

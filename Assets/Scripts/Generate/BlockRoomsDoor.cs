@@ -6,43 +6,27 @@ public class BlockRoomsDoor : MonoBehaviour
     private RoomsOptions _options;
 
     [Header("Gate")]
-
-    [SerializeField]
-    private GameObject[] _blockGate;
-    [SerializeField]
-    private MeshRenderer[] _gateMaterial;
-    [SerializeField]
-    private Material _blue;
+    [SerializeField] private GameObject[] _blockGate;
+    [SerializeField] private MeshRenderer[] _gateMaterial;
+    [SerializeField] private Material _blue;
 
     [Header("Obstacle")]
-    [SerializeField]
-    private GameObject[] _obstaclesVariants;
+    [SerializeField] private GameObject[] _obstaclesVariants;
 
     [Header("Enemy")]
-
-    [SerializeField]
-    private GameObject[] _enemyPrefab;
-    [SerializeField]
-    private GameObject _bossPrefab;
-    [SerializeField]
-    private int _waveValue;
+    [SerializeField] private GameObject[] _enemyPrefab;
+    [SerializeField] private GameObject _bossPrefab;
+    [SerializeField] private int _waveValue;
 
     [Header("Enemy Spawn Point")]
-
-    [SerializeField]
-    private Transform[] _spawnEnemyPoint;
+    [SerializeField] private Transform[] _spawnEnemyPoint;
 
     [Header("Object")]
-
-    [SerializeField]
-    private GameObject _hpPrefab;
+    [SerializeField] private GameObject _hpPrefab;
 
     [Header("Options")]
-
     private int _enemyCount;
-    private bool _isBossRoom = false;
-    private bool _spawned = false;
-    private bool _enemysNull = false;
+    private bool _isBossRoom, _spawned, _enemysNull = false;
 
     private void Start()
     {

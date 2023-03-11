@@ -2,30 +2,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("Shoot")]
-
-    [SerializeField]
-    private AudioSource _shootAudioSource;
-
-    [Header("Damage")]
-
-    [SerializeField]
-    private AudioSource _damageAudioSource;
-
-    [Header("Death")]
-
-    [SerializeField]
-    private AudioSource _deathAudioSource;
-
-    [Header("Dash")]
-
-    [SerializeField]
-    private AudioSource _dashAudioSource;
-
-    [Header("Bounce")]
-
-    [SerializeField]
-    private AudioSource _bounceAudioSource;
+    [Header("Link")]
+    [SerializeField] private AudioSource _shootAudioSource, _damageAudioSource, _deathAudioSource, _dashAudioSource, _bounceAudioSource;
 
     public void ShootAudioPlay()
     {

@@ -4,39 +4,23 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour, IControlable
 {
     [Header("Scripts")]
-
-    [SerializeField]
-    private PlayerGun _gunPlayer;
-    [SerializeField]
-    private Power _skillPlayer;
-    [SerializeField]
-    private AudioManager _audioPlayer;
+    [SerializeField] private PlayerGun _gunPlayer;
+    [SerializeField] private Power _skillPlayer;
+    [SerializeField] private AudioManager _audioPlayer;
 
     [Header("Objects")]
 
-    [SerializeField]
-    private GameObject _firePoint;
-    [SerializeField]
-    private GameObject _player;
-    [SerializeField]
-    private Rigidbody _rigidbody;
-    [SerializeField]
-    private ParticleSystem _dashParticle;
+    [SerializeField] private GameObject _firePoint, _player;
+    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private ParticleSystem _dashParticle;
 
     [Header("Buff/Debuff")]
-
-    [SerializeField]
-    private GameObject _freezeDebuff;
+    [SerializeField] private GameObject _freezeDebuff;
 
     [Header("Options")]
-
-    [SerializeField]
-    private float _speed = 6f;
-    [SerializeField]
-    private float _shootDelay = 0.5f;
-    [SerializeField]
-    private float _dash = 500f;
-
+    [SerializeField] private float _speed = 6f;
+    [SerializeField] private float _shootDelay = 0.5f;
+    [SerializeField] private float _dash = 500f;
     private Vector3 _direction;
     private float _lastDashTime;
 
