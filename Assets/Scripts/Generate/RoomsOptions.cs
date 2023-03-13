@@ -6,6 +6,9 @@ public class RoomsOptions : MonoBehaviour
 {
     [Header("Objects")]
     public GameObject[] UpRooms, RightRooms, DownRooms, LeftRooms;
+    public GameObject[] CloseUpRooms, CloseRightRooms, CloseDownRooms, CloseLeftRooms;
+
+    [Header("LevelRooms")]
     public List<GameObject> Rooms;
 
     private void Start()

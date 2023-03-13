@@ -20,14 +20,14 @@ public class PlayerGun : MonoBehaviour
 
     [Header("GunOptions")]
     [SerializeField] private float _speed = 100;
-    [SerializeField] private float _shootDelay = 1.5f;
+    [SerializeField] private float _shootDelaySeconds = 1.5f;
     [SerializeField] private bool _bouncingBullets;
     [SerializeField] private float _bounceDistance = 10f;
     private float LastShootTime;
 
     public void Shoot()
     {
-        if (LastShootTime + _shootDelay < Time.time)
+        if (LastShootTime + _shootDelaySeconds < Time.time)
         {
             _mainCamera.SetTrigger("Shake");
             _audioPlayer.ShootAudioPlay();
@@ -113,6 +113,6 @@ public class PlayerGun : MonoBehaviour
 
     public void ChangeShootDelay(float value)
     {
-        _shootDelay = value;
+        _shootDelaySeconds = value;
     }
 }

@@ -19,10 +19,15 @@ public class PlayerController : MonoBehaviour, IControlable
 
     [Header("Options")]
     [SerializeField] private float _speed = 6f;
-    [SerializeField] private float _shootDelay = 0.5f;
-    [SerializeField] private float _dash = 500f;
+    [SerializeField] private float _dashDelay = 0.5f;
+    [SerializeField] private float _dashForce = 500f;
     private Vector3 _direction;
     private float _lastDashTime;
+
+    public void MovePlayer(Vector3 offset)
+    {
+        transform.position += offset;
+    }
 
     private void FixedUpdate()
     {
@@ -63,7 +68,7 @@ public class PlayerController : MonoBehaviour, IControlable
 
     public void DashLogic()
     {
-        if (_lastDashTime + _shootDelay < Time.time)
+        if (_lastDashTime + _dashDelay < Time.time)
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -90,7 +95,7 @@ public class PlayerController : MonoBehaviour, IControlable
     {
         _audioPlayer.DashAudioPlay();
 
-        _rigidbody.AddForce(direction * _dash, ForceMode.Force);
+        _rigidbody.AddForce(direction * _dashForce, ForceMode.Force);
         _dashParticle.Play();
         yield return new WaitForSeconds(0.2f);
         _dashParticle.Stop();
@@ -107,7 +112,7 @@ public class PlayerController : MonoBehaviour, IControlable
     public void SlowingSpeed(float speedValue)
     {
         _speed = speedValue;
-        _dash = 250f;
+        _dashForce = 250f;
         _freezeDebuff.SetActive(true);
         StartCoroutine(FiveSecondsTimer());
     }
@@ -116,7 +121,7 @@ public class PlayerController : MonoBehaviour, IControlable
     {
         yield return new WaitForSeconds(5f);
         _freezeDebuff.SetActive(false);
-        _dash = 500f;
+        _dashForce = 500f;
         _speed = 6f;
     }
 }

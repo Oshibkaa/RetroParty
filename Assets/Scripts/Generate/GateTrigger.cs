@@ -4,9 +4,7 @@ using UnityEngine;
 public class GateTrigger : MonoBehaviour
 {
     [Header("Trigger")]
-
-    [SerializeField]
-    private GameObject[] _triggerGate;
+    [SerializeField] private GameObject[] _triggerGate;
 
     private void OnTriggerEnter(Collider other)
     {

@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class BlockRoomsDoor : MonoBehaviour
 {
+    [Header("Link")]
     private RoomsOptions _options;
 
     [Header("Gate")]
     [SerializeField] private GameObject[] _blockGate;
     [SerializeField] private MeshRenderer[] _gateMaterial;
-    [SerializeField] private Material _blue;
+    [SerializeField] private Material _blue, _wall;
 
     [Header("Obstacle")]
     [SerializeField] private GameObject[] _obstaclesVariants;

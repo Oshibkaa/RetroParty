@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2776907911072049815}
   - component: {fileID: 5329535253745376659}
   - component: {fileID: 6414127007587748873}
-  - component: {fileID: 7962042930578256238}
   m_Layer: 9
   m_Name: Eye
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7962042930578256238
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082166613606299442}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2588869072202969000
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +434,6 @@ GameObject:
   - component: {fileID: 5434693090250938747}
   - component: {fileID: 7041267165944851942}
   - component: {fileID: 4938843137052934314}
-  - component: {fileID: 7938624295680843881}
   m_Layer: 9
   m_Name: Eye (1)
   m_TagString: Untagged
@@ -521,19 +506,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7938624295680843881
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2613925969238545087}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8325549662643785707
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +549,7 @@ GameObject:
   - component: {fileID: 8325549663069237590}
   - component: {fileID: 8325549663069237591}
   - component: {fileID: 8325549663069237589}
-  - component: {fileID: 4561171003765924507}
+  - component: {fileID: 4059181359273199473}
   - component: {fileID: 8382591001734184280}
   m_Layer: 9
   m_Name: SmallFreezeEnemy
@@ -643,7 +615,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8325549663069237578}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.5
+  m_Radius: 1
   m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 48
@@ -656,7 +628,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4561171003765924507
+--- !u!114 &4059181359273199473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -665,16 +637,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8325549663069237578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84ad1fb137dda2643a23b28fb04aec97, type: 3}
+  m_Script: {fileID: 11500000, guid: 57f1dcf2a8de19342801283d05502c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioEnemy: {fileID: 3731706796583164977}
-  _aiBullet: {fileID: 6920787993049495278, guid: 1efcc33d8bcfee542b003c86dc37fb49, type: 3}
-  _firePoint: {fileID: 8325549662643785706}
   _target: {fileID: 0}
   _agent: {fileID: 8325549663069237589}
   _lookRadius: 20
-  _attackRadius: 10
+  AttackRadius: 10
+  _audioEnemy: {fileID: 3731706796583164977}
+  _aiBullet: {fileID: 6920787993049495278, guid: 1efcc33d8bcfee542b003c86dc37fb49, type: 3}
+  _firePoint: {fileID: 8325549662643785706}
   _attackReset: 1
 --- !u!114 &8382591001734184280
 MonoBehaviour:
@@ -692,17 +664,9 @@ MonoBehaviour:
   _enemyMeshRenderer: {fileID: 6045011828081755862}
   _enemyMaterial: {fileID: 2100000, guid: 196696431e92fd64aa268806605415da, type: 2}
   _damageMaterial: {fileID: 2100000, guid: 7362a55a91259784880f4670040612ae, type: 2}
-  _bossEnemy: {fileID: 0}
-  _enemy: {fileID: 0}
-  _shield: {fileID: 0}
-  _ParticlePoint: {fileID: 0}
-  _explosionParticle: {fileID: 0}
-  _winUiMenu: {fileID: 0}
   _healthEnemy: 2
-  PointValue: 250
+  _pointValue: 750
   _enemyRb: {fileID: 8325549663069237591}
-  _enemyPosition: []
-  _enemyID: Freeze
 --- !u!1 &8325549663244783668
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,11 +24,11 @@ public class Bullet : MonoBehaviour
             EnemyHealth target = other.transform.gameObject.GetComponent<EnemyHealth>();
             target.TakeDamage();
 
-            if (target.CheckHealth() > 0)
+            if (target.HealthCheck > 0)
             {
                 LowParticle();
             }
-            if (target.CheckHealth() <= 0)
+            if (target.HealthCheck <= 0)
             {
                 HighParticle();
             }

@@ -11,24 +11,22 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private MeshRenderer _enemyMeshRenderer;
     [SerializeField] private Material _enemyMaterial, _damageMaterial;
 
-    [Header("Objects")]
-    [SerializeField]
-    private GameObject _bossEnemy, _enemy, _shield, _winUiMenu;
-    [SerializeField]
-    private Transform _ParticlePoint;
-    [SerializeField]
-    private ParticleSystem _explosionParticle;
-
     [Header("Options")]
     [SerializeField] private int _healthEnemy, _pointValue;
     [SerializeField] private Rigidbody _enemyRb;
-    [SerializeField] private Transform[] _enemyPosition;
-    [SerializeField] private string _enemyID;
+
+    public delegate void DamageEventHandler();
+    public event DamageEventHandler DamageEvent;
 
     void Start()
     {
         _uiManager = GameObjectManager.instance.allObjects[1].GetComponent<UIManager>();
         _enemyMeshRenderer.material = _enemyMaterial;
+
+        if (_uiManager == null)
+            _uiManager = FindObjectOfType<UIManager>();
+        if (_audioEnemy == null)
+            _audioEnemy = FindObjectOfType<AudioManager>();
     }
 
     public void TakeDamage()
@@ -36,35 +34,23 @@ public class EnemyHealth : MonoBehaviour
         _healthEnemy--;
 
         StartCoroutine(Damage());
-        _audioEnemy.TakeDamageAudioPlay();
+        _audioEnemy?.TakeDamageAudioPlay();
+
+        if (DamageEvent != null)
+            DamageEvent();
 
         if (_healthEnemy <= 0)
         {
-            _audioEnemy.DeathAudioPlay();
-            _uiManager.UpdateScore(_pointValue);
+            _audioEnemy?.DeathAudioPlay();
+            _uiManager?.UpdateScore(_pointValue);
             Destroy(gameObject);
         }
-
-        if (_enemyID == "Boss")
-        {
-            Instantiate(_explosionParticle, _ParticlePoint.position, _explosionParticle.transform.rotation);
-        }
-        if (_enemyID == "Boss" && _healthEnemy <= 0)
-        {
-            _uiManager.Winner();
-        }
     }
 
-    public int CheckHealth()
+    public int HealthCheck
     {
-        return _healthEnemy;
-    }
-
-    IEnumerator FiveSecondsTimer()
-    {
-        yield return new WaitForSeconds(5f);
-        _shield.SetActive(false);
-        _bossEnemy.layer = 9;
+        get { return _healthEnemy; }
+        protected set { _healthEnemy = value; }
     }
 
     IEnumerator Damage()

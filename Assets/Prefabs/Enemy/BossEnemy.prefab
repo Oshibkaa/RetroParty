@@ -880,8 +880,8 @@ GameObject:
   - component: {fileID: 5724713715798023369}
   - component: {fileID: 7513045982341301513}
   - component: {fileID: 4751746988571318738}
-  - component: {fileID: 5943675999709999956}
-  m_Layer: 16
+  - component: {fileID: 383083324490748621}
+  m_Layer: 9
   m_Name: BossEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -952,7 +952,7 @@ NavMeshAgent:
   m_Radius: 1.5
   m_Speed: 0
   m_Acceleration: 10
-  avoidancePriority: 50
+  avoidancePriority: 1
   m_AngularSpeed: 150
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -974,22 +974,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7914daa820a73c74db08313adfe98b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioEnemy: {fileID: 1619749195336484565}
-  _aiBullet: {fileID: 677234864022654909, guid: 31e4242db65e5034299ea48f08f20cdd, type: 3}
-  _firePoint: {fileID: 7294012084327376626}
   _target: {fileID: 0}
   _agent: {fileID: 7513045982341301513}
   _lookRadius: 20
-  _attackRadius: 10
-  _attackReset: 0.25
+  AttackRadius: 15
+  _audioEnemy: {fileID: 1619749195336484565}
   _forceFieldRadius: 5
+  _numberOfMinions: 2
   _minionPrefab: {fileID: 8325549663069237578, guid: 2927a140c06082b4cbe088394cec1f16, type: 3}
   _iceShieldPrefab: {fileID: 7313112201146541326}
-  _numberOfMinions: 2
+  _attackReset: 0.15
   _bossMeshRenderer: {fileID: 556085433024629807}
   _standartMaterial: {fileID: 2100000, guid: f40bdd3a7c835694483bf5e8f5a791d5, type: 2}
   _frozenMaterial: {fileID: 2100000, guid: 196696431e92fd64aa268806605415da, type: 2}
---- !u!114 &5943675999709999956
+  _aiBullet: {fileID: 677234864022654909, guid: 31e4242db65e5034299ea48f08f20cdd, type: 3}
+  _firePoint: {fileID: 7294012084327376626}
+--- !u!114 &383083324490748621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -998,26 +998,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7820022086258876460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff432dd8df4b7ff4ea87dcc73dde7d26, type: 3}
+  m_Script: {fileID: 11500000, guid: df30786f01116dd488e15ed3b0915f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _audioEnemy: {fileID: 1619749195336484565}
   _enemyMeshRenderer: {fileID: 7231626185430417188}
   _enemyMaterial: {fileID: 2100000, guid: 0f28110144730704fb248ffc2142ca2d, type: 2}
   _damageMaterial: {fileID: 2100000, guid: 7362a55a91259784880f4670040612ae, type: 2}
-  _bossEnemy: {fileID: 7820022086258876460}
-  _enemy: {fileID: 8325549663069237578, guid: 2927a140c06082b4cbe088394cec1f16, type: 3}
-  _shield: {fileID: 7313112201146541326}
-  _ParticlePoint: {fileID: 7024230325904292463}
-  _explosionParticle: {fileID: 2485464093149708769, guid: d2c04e45838e3a94cb99d1a55909316c, type: 3}
-  _winUiMenu: {fileID: 0}
   _healthEnemy: 5
-  PointValue: 1500
+  _pointValue: 2000
   _enemyRb: {fileID: 5724713715798023369}
-  _enemyPosition:
-  - {fileID: 86809476705150288}
-  - {fileID: 491136253523611839}
-  _enemyID: Boss
+  _bossEnemy: {fileID: 7820022086258876460}
+  _shield: {fileID: 7313112201146541326}
 --- !u!1 &8571183180162881167
 GameObject:
   m_ObjectHideFlags: 0

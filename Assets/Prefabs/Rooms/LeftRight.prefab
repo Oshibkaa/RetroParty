@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: -2287874350067978307}
   - component: {fileID: -6808991219577225004}
   - component: {fileID: 6207472544815709367}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: LeftRight
   m_TagString: Rooms
   m_Icon: {fileID: 0}
@@ -1041,6 +1041,7 @@ MonoBehaviour:
   - {fileID: 4928206397876638072}
   - {fileID: 3716572195173123696}
   _blue: {fileID: 2100000, guid: 196696431e92fd64aa268806605415da, type: 2}
+  _wall: {fileID: 2100000, guid: db329ff1527d2da439205643d2e33612, type: 2}
   _obstaclesVariants:
   - {fileID: 2166684062733257468}
   - {fileID: 7539527813755346907}
@@ -1050,6 +1051,7 @@ MonoBehaviour:
   _enemyPrefab:
   - {fileID: 3414339984034591129, guid: 1bcc4edca0efb84488d1a268315d48ae, type: 3}
   - {fileID: 8325549663069237578, guid: 2927a140c06082b4cbe088394cec1f16, type: 3}
+  - {fileID: 4667286632028566522, guid: b107774538ea0f446a80acb61f735248, type: 3}
   _bossPrefab: {fileID: 7820022086258876460, guid: 441ac5accfe31c64c8672b5cc5b97fd4, type: 3}
   _waveValue: 2
   _spawnEnemyPoint:
@@ -2412,15 +2414,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318984298949433125, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.30864573
+      value: 0.005431652
       objectReference: {fileID: 0}
     - target: {fileID: 3318984298949433125, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.41072404
+      value: 0.48303366
       objectReference: {fileID: 0}
     - target: {fileID: 3318984298949433125, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4965664
+      value: 1.506
       objectReference: {fileID: 0}
     - target: {fileID: 3318984298949433125, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2633,15 +2635,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318984298949433125, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.30864525
+      value: -0.005432129
       objectReference: {fileID: 0}
     - target: {fileID: 3318984298949433125, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.41072404
+      value: 0.48303366
       objectReference: {fileID: 0}
     - target: {fileID: 3318984298949433125, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4965668
+      value: 1.504
       objectReference: {fileID: 0}
     - target: {fileID: 3318984298949433125, guid: be7ebff140a02d8449171cb0c79234fa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3298,7 +3300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: m_TagString
-      value: Wall
+      value: None
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}

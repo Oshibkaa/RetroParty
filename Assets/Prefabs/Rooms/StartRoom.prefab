@@ -726,6 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84ee1adac108f0345bc63fbfdcace518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _roomInfo: {fileID: 0}
   _gateDirection: 0
 --- !u!1 &3727318099501732331
 GameObject:
@@ -1426,6 +1427,10 @@ PrefabInstance:
     - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671354401346498529, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
+      propertyPath: m_TagString
+      value: None
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfc8f92d7343b14f8a2b65ab7175cb1, type: 3}
