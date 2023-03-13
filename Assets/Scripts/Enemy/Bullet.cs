@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Wall"))
         {
-            Invoke(nameof(DestroySelf), 0.1f);
+            Invoke(nameof(DestroySelf), 0.2f);
         }
         else if (other.gameObject.CompareTag("Spike"))
         {
